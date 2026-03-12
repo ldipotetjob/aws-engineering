@@ -1,0 +1,12 @@
+# To find the correct device name to use and to check  which nvme device corresponds to your EBS volume, 
+# you can check the volume ID (serial number) directly from the OS
+lsblk -o +SERIAL
+# create an XFS filesystem
+# nvme1n1 is an example, it depends of what you get from: lsblk -o +SERIAL 
+sudo mkfs -t xfs /dev/nvme1n1
+# creating the mount point
+sudo mkdir -p /mnt/sdb
+# give user account ownership of the mount point
+sudo chown ubuntu:ubuntu /mnt/sdb
+# mounting the volume
+sudo mount /dev/nvme1n1 /mnt/sdb
