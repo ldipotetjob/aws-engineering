@@ -1,7 +1,0 @@
-## autoscaling sqs-queue 
-
-A company have develop an application and there are job that take 1hs in pocess video and photos.
-Jobs are running on on-demmand instances.
-During peaks hs de app is slow and some requests are not processed at all and on evening time the system
-is idle.
-ps: the instances of the processing layer are behind an ALB

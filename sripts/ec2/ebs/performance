@@ -1,0 +1,32 @@
+# This is a temporal file until i reorganize all my repositories:
+
+To decompress big files instead of use ONLY tar use the utility pigz:
+
+tar -I pigz -xvf your_file.tar.gz --no-same-owner -C /mnt/sdb/
+
+
+# ===>> start script for big transfer
+
+screen        # start a resilient session
+sudo rsync -a --progress --partial --info=progress2 /mnt/source/ /mnt/target/
+# Detach with Ctrl+A then D
+screen -r    # reconnect later
+
+# ===>> end script for big transfer
+
+# rsync +++ optimized:
+
+sudo rsync -ahW --inplace --info=progress2 /mnt/source/ /mnt/target/
+
+
+
+
+# if we just want to copy:
+(amazon linux 2023 do not include rsync):
+installing rsync:
+$ sudo dnf install rsync -y
+sudo rsync -a --progress --partial --info=progress2 /mnt/source/ /mnt/target/
+
+
+
+

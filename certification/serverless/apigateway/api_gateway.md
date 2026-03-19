@@ -1,2 +1,0 @@
-### jpg version of api_gateway.drawio
-[api_gateway.jpg](https://www.google.com/url?q=https://viewer.diagrams.net/?tags%3D%257B%257D%26highlight%3D0000ff%26edit%3D_blank%26layers%3D1%26nav%3D1%26title%3Dapi_gateway.drawio%23Uhttps%253A%252F%252Fraw.githubusercontent.com%252Fldipotetjob%252FAWS%252Fmain%252Fcertification%252Fapigateway%252Fapi_gateway.drawio&source=gmail&ust=1654958691696000&usg=AOvVaw1xY_uRLzAeJ-0tuU5lKumh)

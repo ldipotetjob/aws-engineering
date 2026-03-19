@@ -1,2 +1,0 @@
-### jpg version of datastorage.md
-[datastorage.jpg](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=datastorage_serverless.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fldipotetjob%2FAWS%2Fmain%2Fcertification%2Fserverless%2Fdatastorage%2Fdatastorage_serverless.drawio)
