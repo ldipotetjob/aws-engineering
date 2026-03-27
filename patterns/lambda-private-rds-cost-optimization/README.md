@@ -39,7 +39,7 @@ Private RDS
 
 ## Architecture
 
-@see: lambda-private-rds-cost-optimization.png 
+![Architecture](lambda-private-rds-cost-optimization.png)
 
 ## Benefits
 
