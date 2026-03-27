@@ -1,0 +1,8 @@
+{
+  "crud_action": "add",
+  "data_dict": {"user_id": "peter_01",
+    "user_name": "Peter",
+    "sex_male": true
+  },
+  "columns_to_update": {"user_name": "Peter"}
+}
