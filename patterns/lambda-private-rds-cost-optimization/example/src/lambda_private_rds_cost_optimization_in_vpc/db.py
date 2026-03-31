@@ -41,10 +41,10 @@ class UserRepository(Connections):
         with self.get_connection() as conn:
             with conn.cursor() as cur:
                 cur.execute("""
-                INSERT INTO user (userid, username, is_male) 
-                VALUES (%s, %s, %s, %s, %s, %s)
-                """,  (usr.user_id, usr.user_name, usr.sex_male))
-                logger.info(f'[f.UserRepository.add] register added. userid: {usr.user_id}, user_name:{usr.user_name}')
+                INSERT INTO users (username, is_male) 
+                VALUES (%s, %s)
+                """,  (usr.user_name, usr.sex_male))
+                logger.info(f'[f.UserRepository.add] register added. username: {usr.user_name}')
             conn.commit()
         return {
             'statusCode': http.HTTPStatus.OK,
@@ -58,7 +58,7 @@ class UserRepository(Connections):
         with self.get_connection() as conn:
             with conn.cursor() as cur:
                 cur.execute("""
-                DELETE FROM user WHERE userid = %s """,
+                DELETE FROM users WHERE userid = %s """,
                             usr.user_id)
                 record_modified = cur.rowcount
             conn.commit()
@@ -91,7 +91,7 @@ class UserRepository(Connections):
         conn = self.get_connection()
         with conn.cursor() as cur:
             query = f"""
-            UPDATE User
+            UPDATE Users
             SET {set_clause}
             WHERE userid = %s
             """

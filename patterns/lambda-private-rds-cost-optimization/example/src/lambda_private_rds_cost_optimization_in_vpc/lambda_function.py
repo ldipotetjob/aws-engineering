@@ -1,6 +1,5 @@
 import logging
 import db
-import http
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -25,9 +24,9 @@ def lambda_db(action, db_hostname, db_name, db_password, db_username, user_colum
     match action:
         case "add":
             user_object = (db.
-                              User(user_columns['user_id'],
-                                            user_columns['user_name'],
-                                            user_columns['sex_male'])
+                              User('N/A',
+                                   user_columns['user_name'],
+                                   user_columns['sex_male'])
                               )
             logger.info(f"Adding User: {user_object}")
             response = db.UserRepository(db_hostname, db_username, db_password, 5432, db_name).add(user_object)
