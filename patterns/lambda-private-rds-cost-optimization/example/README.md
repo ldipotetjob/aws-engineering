@@ -19,7 +19,7 @@ The pattern uses a **public Lambda as a wrapper** to invoke a **VPC-isolated Lam
 To keep the example focused on the pattern, the following resources must already exist:
 
 ### Lambda functions
-Two AWS Lambda empty functions (runtime >= Python 3.11) must already exist:
+Two AWS Lambda placeholder functions (runtime >= Python 3.11) must already exist:
 - lambda_private_rds_cost_optimization_in_vpc
 - lambda_private_rds_cost_optimization_not_in_vpc
 
@@ -35,7 +35,7 @@ Two AWS Lambda empty functions (runtime >= Python 3.11) must already exist:
 
 ### Database
 
-- A PostgresSQL RDS instance must already exist in `${AWS_REGION}`
+- A PostgreSQL RDS instance must already exist in `${AWS_REGION}`
 - Must be reachable from the VPC Lambda
 
 ### Lambda Layer
@@ -61,7 +61,7 @@ Two AWS Lambda empty functions (runtime >= Python 3.11) must already exist:
 
 ## Execution Flow
 
-1. Client invokes the public Lambda
+1. Client invokes the public Lambda (non-VPC)
 2. Public Lambda invokes the private Lambda
 3. Private Lambda connects to RDS
 4. Query result is returned back through the chain
@@ -83,10 +83,11 @@ export AWS_SECRET_ACCESS_KEY=${token_secret_key}
 ```bash
 make all HANDLER=<lambda_name> 
 ```
-Where <lambda_name> is one of:
 
-lambda_private_rds_cost_optimization_in_vpc
-lambda_private_rds_cost_optimization_not_in_vpc
+Where `<lambda_name>` is one of:
+
+- `lambda_private_rds_cost_optimization_in_vpc`
+- `lambda_private_rds_cost_optimization_not_in_vpc`
 
 ## IAM Policies 
 
@@ -99,7 +100,7 @@ They allow:
 
 ## Database Requirements
 
-This example assumes an existing PostgresSQL table:
+This example assumes an existing PostgreSQL table:
 
 ```sql
 CREATE TABLE users (
